@@ -1,10 +1,15 @@
 from functions import *
 
 # E chords are used for stack manipulation and I/O.
-e_chords = { 'E' : take_input,
-             'Em': take_raw_input,
-             'E5': take_raw_input_split_newlines,
-             'E6': take_raw_input_split_spaces,
-             'E7': take_raw_input_split_delim }
+e_chords = { 'E'  : take_input,
+             'Em' : take_raw_input,
+             'E5' : take_raw_input_split_newlines,
+             'E6' : take_raw_input_split_spaces,
+             'E7' : take_raw_input_split_delim,
+             'E9' : take_raw_input_split_comma,
+             'Es' : pop_2_and_swap,
+             'Em6': pop_and_discard,
+             'Em7': pop_and_push_twice,
+             'EM7': pop_and_push_thrice }
 
 chord_functions = dict(list(e_chords.items()))
