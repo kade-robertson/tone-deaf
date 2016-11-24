@@ -1,9 +1,17 @@
 import os
 import argparse
 
+from stack import *
+from functionsdict import *
+
 def process(tokens):
-    stack = []
-    pass
+    stack = Stack()
+    index = 0
+    while 0 <= index < len(tokens):
+        if tokens[index] in chord_functions.keys():
+            chord_functions[tokens[index]](stack)
+        index += 1
+    print(stack)
 
 def readf(path, lyrics):
     prog = ''
