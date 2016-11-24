@@ -30,3 +30,9 @@ def pop_and_push_thrice(stack):
     stack.push(item)
     stack.push(item)
     stack.push(item)
+def rotate_stack_right(stack):
+    stack.rotate(1)
+def rotate_stack_left(stack):
+    stack.rotate(-1)
+def reverse_stack(stack):
+    stack.reverse()
