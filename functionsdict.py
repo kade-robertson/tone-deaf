@@ -7,7 +7,6 @@ e_chords = { 'E'   : take_input,
              'E6'  : take_raw_input_split_spaces,
              'E7'  : take_raw_input_split_delim,
              'E9'  : take_raw_input_split_comma,
-             'Eb'  : swap_first_and_third,
              'Es'  : pop_2_and_swap,
              'Em6' : pop_and_discard,
              'Em7' : pop_and_push_twice,
@@ -15,6 +14,12 @@ e_chords = { 'E'   : take_input,
              'E11' : rotate_stack_right,
              'Es4' : rotate_stack_left,
              'E7#9': reverse_stack,
-             'E75b': shuffle_stack }
+             'E75b': shuffle_stack,
+             'E7b9': swap_first_and_third,
+             'Eb^9': pop_under_first,
+             'Em^9': pop_two_under_first,
+             'Ems4': sort_stack,
+             'Em/B': sort_stack_desc,
+             'Em/D': swap_first_and_fourth }
 
 chord_functions = dict(list(e_chords.items()))

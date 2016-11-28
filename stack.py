@@ -44,3 +44,5 @@ class Stack():
         self.__stk = self.__stk[::-1]
     def shuffle(self):
         rshuffle(self.__stk)
+    def sort(self, asc = True):
+        self.__stk = sorted(self.__stk)[::2*asc - 1]
