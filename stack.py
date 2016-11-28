@@ -1,3 +1,5 @@
+from random import shuffle as rshuffle
+
 class Stack():
     def __init__(self):
         self.__stk = []
@@ -40,3 +42,5 @@ class Stack():
         return self.__stk[-1]
     def reverse(self):
         self.__stk = self.__stk[::-1]
+    def shuffle(self):
+        rshuffle(self.__stk)

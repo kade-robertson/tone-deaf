@@ -14,6 +14,13 @@ def take_raw_input_split_delim(stack):
     stack.push(sys.stdin.read().split(str(stack.pop())))
 def take_raw_input_split_comma(stack):
     stack.push(sys.stdin.read().split(','))
+def swap_first_and_third(stack):
+    c = stack.pop()
+    b = stack.pop()
+    a = stack.pop()
+    stack.push(c)
+    stack.push(b)
+    stack.push(a)
 def pop_2_and_swap(stack):
     b = stack.pop()
     a = stack.pop()
@@ -36,3 +43,5 @@ def rotate_stack_left(stack):
     stack.rotate(-1)
 def reverse_stack(stack):
     stack.reverse()
+def shuffle_stack(stack):
+    stack.shuffle()
