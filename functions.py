@@ -1,7 +1,19 @@
 import sys
 from stack import *
 
-# Stack Manipulation / IO:
+# [A Chords] Math Operations:
+def pop_2_and_add(stack):
+    stack.push(stack.pop() + stack.pop())
+def pop_2_and_subtr(stack):
+    a = stack.pop()
+    stack.push(stack.pop() - a)
+def pop_2_and_mult(stack):
+    stack.push(stack.pop() * stack.pop())
+def pop_2_and_divd(stack):
+    a = stack.pop()
+    stack.push(stack.pop() / a)
+
+# [E Chords] Stack Manipulation / IO:
 def take_input(stack):
     stack.push(eval(input()))
 def take_raw_input(stack):

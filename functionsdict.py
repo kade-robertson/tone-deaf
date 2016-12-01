@@ -1,5 +1,11 @@
 from functions import *
 
+# A chords are used for math operations.
+a_chords = { 'A'   : pop_2_and_add,
+             'As'  : pop_2_and_subtr,
+             'Am'  : pop_2_and_mult,
+             'Ab'  : pop_2_and_divd }
+
 # E chords are used for stack manipulation and I/O.
 e_chords = { 'E'   : take_input,
              'Em'  : take_raw_input,
@@ -22,4 +28,4 @@ e_chords = { 'E'   : take_input,
              'Em/B': sort_stack_desc,
              'Em/D': swap_first_and_fourth }
 
-chord_functions = dict(list(e_chords.items()))
+chord_functions = dict(list(a_chords.items()) + list(e_chords.items()))
