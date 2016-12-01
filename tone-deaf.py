@@ -1,4 +1,5 @@
 import os
+import message
 import argparse
 
 from stack import *
@@ -18,7 +19,10 @@ def readf(path, lyrics):
     with open(path, 'r') as file:
         prog = file.read()
     prog = prog.split('\n')
-    if lyrics: prog = prog[::2]
+    if lyrics:
+        if any(message.trigger_message in l for l in prog[1::2]):
+            print(message.response_message)
+        prog = prog[::2]
     prog = [x.split() for x in prog]
     tokens = []
     for row in prog:
