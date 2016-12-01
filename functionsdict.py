@@ -4,7 +4,7 @@ from functions import *
 a_chords = { 'A'   : pop_2_and_add,
              'As'  : pop_2_and_subtr,
              'Am'  : pop_2_and_mult,
-             'Ab'  : pop_2_and_divd }
+             'Ad'  : pop_2_and_divd }
 
 # E chords are used for stack manipulation and I/O.
 e_chords = { 'E'   : take_input,
