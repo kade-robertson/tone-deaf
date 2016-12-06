@@ -8,6 +8,18 @@ def tetrate(x, y):
         out = x ** out
         y -= 1
     return out
+def is_prime(x):
+    if x % 2 == 0 or x < 2:
+        return 0
+    elif x == 2:
+        return 1
+    else:
+        i = 3
+        while i < int(x**.5)+1:
+            if x % i == 0:
+                return 0
+            i += 2
+        return 1
 
 # [A Chords] Math Operations:
 def pop_2_and_add(stack):
@@ -39,6 +51,16 @@ def pop_2_and_exp(stack):
 def pop_2_and_tetr(stack):
     a = stack.pop()
     stack.push(tetrate(stack.pop(), a))
+def pop_2_and_check_greater(stack):
+    a = stack.pop()
+    stack.push(1 if stack.pop() > a else 0)
+def pop_2_and_check_greq(stack):
+    a = stack.pop()
+    stack.push(1 if stack.pop() >= a else 0)
+def pop_and_check_parity(stack):
+    stack.push(stack.pop()%2)
+def pop_and_check_primality(stack):
+    stack.push(is_prime(stack.pop()))
 
 # [E Chords] Stack Manipulation / IO:
 def take_input(stack):
