@@ -1,6 +1,14 @@
 import sys
 from stack import *
 
+# Used by one of the chords, previously unimplemented:
+def tetrate(x, y):
+    out = x
+    while y > 1:
+        out = x ** out
+        y -= 1
+    return out
+
 # [A Chords] Math Operations:
 def pop_2_and_add(stack):
     stack.push(stack.pop() + stack.pop())
@@ -15,12 +23,22 @@ def pop_2_and_divd(stack):
 def pop_2_and_modul(stack):
     a = stack.pop()
     stack.push(stack.pop() % a)
-def pop_and_square():
+def pop_and_square(stack):
     a = stack.pop()
     stack.push(a * a)
-def pop_and_cube():
+def pop_and_cube(stack):
     a = stack.pop()
     stack.push(a * a * a)
+def pop_and_sqrt(stack):
+    stack.push(stack.pop() ** 0.5)
+def pop_and_cbrt(stack):
+    stack.push(stack.pop() ** (1/3))
+def pop_2_and_exp(stack):
+    a = stack.pop()
+    stack.push(stack.pop() ** a)
+def pop_2_and_tetr(stack):
+    a = stack.pop()
+    stack.push(tetrate(stack.pop(), a))
 
 # [E Chords] Stack Manipulation / IO:
 def take_input(stack):
