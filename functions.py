@@ -12,6 +12,15 @@ def pop_2_and_mult(stack):
 def pop_2_and_divd(stack):
     a = stack.pop()
     stack.push(stack.pop() / a)
+def pop_2_and_modul(stack):
+    a = stack.pop()
+    stack.push(stack.pop() % a)
+def pop_and_square():
+    a = stack.pop()
+    stack.push(a * a)
+def pop_and_cube():
+    a = stack.pop()
+    stack.push(a * a * a)
 
 # [E Chords] Stack Manipulation / IO:
 def take_input(stack):
