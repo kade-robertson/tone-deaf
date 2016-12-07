@@ -32,6 +32,15 @@ def prime_factors(x):
             x /= i
         i += 2
     return f
+def tetr_mod(x, y, m):
+    a = 1
+    i = 0
+    while i < y:
+        b = pow(x, a, m)
+        if a == b: break
+        a = b
+        i += 1
+    return b
 
 # [A Chords] Math Operations:
 def pop_2_and_add(stack):
@@ -75,6 +84,14 @@ def pop_and_check_primality(stack):
     stack.push(is_prime(stack.pop()))
 def pop_and_get_prime_factors(stack):
     stack.push(prime_factors(stack.pop()))
+def pop_3_and_exp_mod(stack):
+    a = stack.pop()
+    b = stack.pop()
+    stack.push(pow(stack.pop(), b, a))
+def pop_3_and_tetr_mod(stack):
+    a = stack.pop()
+    b = stack.pop()
+    stack.push(tetr_mod(stack.pop(), b, a))
 
 # [E Chords] Stack Manipulation / IO:
 def take_input(stack):
