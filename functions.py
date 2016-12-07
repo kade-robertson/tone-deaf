@@ -20,6 +20,18 @@ def is_prime(x):
                 return 0
             i += 2
         return 1
+def prime_factors(x):
+    f = []
+    while x % 2 == 0:
+        f += [2]
+        x /= 2
+    i = 3
+    while x > 1:
+        while x % i == 0:
+            f += [i]
+            x /= i
+        i += 2
+    return f
 
 # [A Chords] Math Operations:
 def pop_2_and_add(stack):
@@ -61,6 +73,8 @@ def pop_and_check_parity(stack):
     stack.push(stack.pop()%2)
 def pop_and_check_primality(stack):
     stack.push(is_prime(stack.pop()))
+def pop_and_get_prime_factors(stack):
+    stack.push(prime_factors(stack.pop()))
 
 # [E Chords] Stack Manipulation / IO:
 def take_input(stack):
