@@ -1,4 +1,5 @@
 import sys
+import math
 from stack import *
 
 # Used by one of the chords, previously unimplemented:
@@ -107,6 +108,15 @@ def pop_and_double(stack):
     stack.push(2 * stack.pop())
 def pop_and_halve(stack):
     stack.push(stack.pop() / 2)
+def pop_and_round(stack):
+    stack.push(round(stack.pop()))
+def pop_and_floor(stack):
+    stack.push(math.floor(stack.pop()))
+def pop_and_ceil(stack):
+    stack.push(math.ceil(stack.pop()))
+def pop_2_and_divd_int(stack):
+    a = stack.pop()
+    stack.push(stack.pop() // a)
 #def pop_matrix_and_get_determinant(stack):
 #    stack.push(lu_decomp_det(stack.pop()))
 
