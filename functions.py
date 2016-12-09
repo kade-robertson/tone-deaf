@@ -1,5 +1,6 @@
 import sys
 import math
+import fractions
 from stack import *
 
 # Used by one of the chords, previously unimplemented:
@@ -117,6 +118,17 @@ def pop_and_ceil(stack):
 def pop_2_and_divd_int(stack):
     a = stack.pop()
     stack.push(stack.pop() // a)
+def pop_2_and_divmod(stack):
+    a = stack.pop()
+    b = stack.pop()
+    stack.push([b // a, b % a])
+def pop_2_and_get_gcd(stack):
+    a = stack.pop()
+    stack.push(fractions.gcd(stack.pop(), a))
+def pop_2_and_get_lcm(stack):
+    a = stack.pop()
+    b = stack.pop()
+    stack.push((a*b)/fractions.gcd(a,b))
 #def pop_matrix_and_get_determinant(stack):
 #    stack.push(lu_decomp_det(stack.pop()))
 
