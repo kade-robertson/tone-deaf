@@ -41,6 +41,17 @@ def tetr_mod(x, y, m):
         a = b
         i += 1
     return b
+def lu_decomp_det(m):
+    d = 1
+    s = len(m)
+    for i in range(s):
+        d *= m[i,i]
+        c = i+1
+        for j in range(c, s):
+            m[j,i] /= m[i,i]
+            for k in range(c, s):
+                m[j,k] -= m[j,i] * m[i,k]
+    return d
 
 # [A Chords] Math Operations:
 def pop_2_and_add(stack):
@@ -92,6 +103,12 @@ def pop_3_and_tetr_mod(stack):
     a = stack.pop()
     b = stack.pop()
     stack.push(tetr_mod(stack.pop(), b, a))
+def pop_and_double(stack):
+    stack.push(2 * stack.pop())
+def pop_and_halve(stack):
+    stack.push(stack.pop() / 2)
+#def pop_matrix_and_get_determinant(stack):
+#    stack.push(lu_decomp_det(stack.pop()))
 
 # [E Chords] Stack Manipulation / IO:
 def take_input(stack):

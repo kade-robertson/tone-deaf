@@ -18,7 +18,9 @@ a_chords = { 'A'   : pop_2_and_add,
              'A#m' : pop_and_check_primality,
              'A/D' : pop_and_get_prime_factors,
              'A11' : pop_3_and_exp_mod,
-             'A13' : pop_3_and_tetr_mod }
+             'A13' : pop_3_and_tetr_mod,
+             'A7+' : pop_and_double,
+             'AM7' : pop_and_halve }
 
 # E chords are used for stack manipulation and I/O.
 e_chords = { 'E'   : take_input,
