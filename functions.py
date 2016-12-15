@@ -129,6 +129,9 @@ def pop_2_and_get_lcm(stack):
     a = stack.pop()
     b = stack.pop()
     stack.push((a*b)/fractions.gcd(a,b))
+def pop_and_get_nth_trinum(stack):
+    a = stack.pop()
+    stack.push((a*-~a)/2)
 #def pop_matrix_and_get_determinant(stack):
 #    stack.push(lu_decomp_det(stack.pop()))
 
