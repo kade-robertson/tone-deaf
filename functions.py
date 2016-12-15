@@ -132,6 +132,14 @@ def pop_2_and_get_lcm(stack):
 def pop_and_get_nth_trinum(stack):
     a = stack.pop()
     stack.push((a*-~a)/2)
+def pop_2_and_get_perm(stack):
+    a = stack.pop()
+    b = stack.pop()
+    stack.push(math.factorial(b)/math.factorial(b-a))
+def pop_2_and_get_comb(stack):
+    a = stack.pop()
+    b = stack.pop()
+    stack.push(math.factorial(b)/(math.factorial(a)*math.factorial(b-a)))
 #def pop_matrix_and_get_determinant(stack):
 #    stack.push(lu_decomp_det(stack.pop()))
 
