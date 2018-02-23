@@ -5,14 +5,17 @@ import argparse
 from stack import *
 from functionsdict import *
 
-def process(tokens):
-    stack = Stack()
+def process(tokens, past_stack=None):
+    stack = past_stack
+    if not stack:
+        stack = Stack()
     index = 0
     while 0 <= index < len(tokens):
         if tokens[index] in chord_functions.keys():
             chord_functions[tokens[index]](stack)
         index += 1
     print(stack)
+    return stack
 
 def readf(path, lyrics):
     prog = ''
@@ -28,7 +31,13 @@ def readf(path, lyrics):
     for row in prog:
         tokens += row
     process(tokens)
-    
+
+def replenv():
+    inp = input("td> ")
+    cstack = Stack()
+    while inp != "quit":
+        cstack = process(inp.split(), cstack)
+        inp = input("td> ")
 
 def main():
     parser = argparse.ArgumentParser(description = 'Interpreter for the tone-deaf programming language.')
@@ -43,6 +52,8 @@ def main():
                 print('-f: Error - no path given.')
         else:
             print('-f: Error - no path given.')
+    else:
+        replenv()
         
 
 if __name__ == '__main__':
