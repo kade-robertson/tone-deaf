@@ -1,4 +1,4 @@
-from functions import *
+from .functions import *
 
 # A chords are used for math operations.
 a_chords = { 'A'    : pop_2_and_add,

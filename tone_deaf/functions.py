@@ -1,7 +1,7 @@
 import sys
 import math
 import fractions
-from stack import *
+from .stack import *
 
 # Used by one of the chords, previously unimplemented:
 def tetrate(x, y):
