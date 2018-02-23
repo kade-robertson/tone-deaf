@@ -2,6 +2,12 @@
 
 tone-deaf is an esoteric programming language which manipulates a stack based on chords. This repository contains a reference interpreter for the language as well as the wiki describing each function.
 
+tone-deaf can be installed through `pip`:
+
+```
+pip install tone-deaf
+```
+
 # Running from a file
 
 Programs can be run from a file in one of two modes: normal or 'lyric' mode. Lyric mode allows you to leave comments on every other line, like so:
