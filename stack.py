@@ -24,16 +24,12 @@ class Stack():
         self.__stk.insert(index, item)
     def rotate(self, moves=1):
         if moves < 1:
-            moves = abs(moves)
-            while moves:
-                temp = self.__stk.pop(0)
-                self.__stk.append(temp)
-                moves -= 1
+            moves = abs(moves) % len(self.__stk)
+            if moves > 0:
+                self.__stk = self.__stk[moves:] + self.__stk[:moves]
         else:
-            while moves:
-                temp = self.__stk.pop()
-                self.__stk.insert(0, temp)
-                moves -= 1
+            moves = -moves
+            self.__stk = self.__stk[moves:] + self.__stk[:moves]
     def item_at(self, index):
         return self.__stk[index]
     def index_of(self, item):
