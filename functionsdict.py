@@ -54,4 +54,6 @@ e_chords = { 'E'    : take_input,
              'Em/B' : sort_stack_desc,
              'Em/D' : swap_first_and_fourth }
 
-chord_functions = dict(list(a_chords.items()) + list(e_chords.items()))
+chord_functions = dict()
+chord_functions.update(a_chords)
+chord_functions.update(e_chords)
