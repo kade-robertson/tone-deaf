@@ -1,7 +1,6 @@
 import os
 import argparse
 from .stack import *
-from .message import *
 from .functionsdict import *
 
 def process(tokens, past_stack=None):
@@ -22,8 +21,6 @@ def readf(path, lyrics):
         prog = file.read()
     prog = prog.split('\n')
     if lyrics:
-        if any(trigger_message in l for l in prog[1::2]):
-            print(response_message)
         prog = prog[::2]
     prog = [x.split() for x in prog]
     tokens = []
