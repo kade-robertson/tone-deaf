@@ -25,7 +25,7 @@ which the intepreter reads as:
 E E E A7 A7
 ```
 
-Normal mode assumes there are no comments. To load a file in normal mode, use the `-f` switch, i.e. `tone-deaf -f program.deaf`. To load a file in lyric mode, use the `-l` switch, i.e. `tone-deaf -l program.deaf`.
+Normal mode assumes there are no comments. To load a file in normal mode, use the `-f` option, i.e. `tone-deaf -f program.deaf`. To load a file in lyric mode, use the `-l` switch along with the `-f` option, i.e. `tone-deaf -l -f program.deaf`.
 
 # Using the REPL
 
