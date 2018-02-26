@@ -11,7 +11,7 @@ except(IOError, ImportError):
 
 setup(
     name = "tone-deaf",
-    version = "0.1.0",
+    version = "0.1.1",
     description = "An interpreter for the tone-deaf programming language.",
     long_description = long_desc,
     classifiers = [
