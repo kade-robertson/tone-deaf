@@ -205,3 +205,8 @@ def swap_first_and_fourth(stack):
     stack.push(b)
     stack.push(c)
     stack.push(a)
+
+# D Chords - String / List Manipulation
+def reverse_str(stack):
+    s = stack.pop()
+    stack.push(s[::-1])
