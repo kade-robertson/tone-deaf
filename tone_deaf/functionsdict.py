@@ -63,7 +63,8 @@ d_chords = {
     'D'    : reverse_str,
     'D#'   : shuffle_str,
     'D#4'  : slice_str,
-    'D#7'  : slice_str_adv
+    'D#7'  : slice_str_adv,
+    'D#m'  : remove_every_other
 }
 
 chord_functions = dict()

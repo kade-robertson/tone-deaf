@@ -235,3 +235,6 @@ def slice_str_adv(stack):
     end = len(s) if end == 0 else end
     start = 0 if start == 0 else start
     stack.push(s[start:end:skip])
+def remove_every_other(stack):
+    s = stack.pop(stack):
+    stack.push(s[::2])
