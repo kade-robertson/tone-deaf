@@ -61,6 +61,9 @@ e_chords = {
 # D chords are used for string or list manipulation.
 d_chords = {
     'D'    : reverse_str,
+    'D#'   : shuffle_str,
+    'D#4'  : slice_str,
+    'D#7'  : slice_str_adv
 }
 
 chord_functions = dict()

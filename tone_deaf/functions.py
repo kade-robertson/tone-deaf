@@ -210,3 +210,28 @@ def swap_first_and_fourth(stack):
 def reverse_str(stack):
     s = stack.pop()
     stack.push(s[::-1])
+def shuffle_str(stack):
+    s = stack.pop()
+    if isinstance(s, str):
+        s = list(s)
+        rshuffle(s)
+        s = ''.join(s)
+    else:
+        rshuffle(s)
+    stack.push(s)
+def slice_str(stack):
+    end = stack.pop()
+    start = stack.pop()
+    s = stack.pop()
+    end = len(s) if end == 0 else end
+    start = 0 if start == 0 else start
+    stack.push(s[start:end])
+def slice_str_adv(stack):
+    skip = stack.pop()
+    end = stack.pop()
+    start = stack.pop()
+    s = stack.pop()
+    skip = 1 if skip == 0 else skip
+    end = len(s) if end == 0 else end
+    start = 0 if start == 0 else start
+    stack.push(s[start:end:skip])
