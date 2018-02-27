@@ -3,6 +3,17 @@ import argparse
 from .stack import *
 from .functionsdict import *
 
+def trycast(token):
+    try:
+        return int(token)
+    except ValueError:
+        pass
+    try:
+        return float(token)
+    except ValueError:
+        pass
+    return None
+
 def process(tokens, past_stack=None):
     stack = past_stack
     if not stack:
@@ -11,6 +22,10 @@ def process(tokens, past_stack=None):
     while 0 <= index < len(tokens):
         if tokens[index] in chord_functions.keys():
             chord_functions[tokens[index]](stack)
+        else:
+            casted = trycast(tokens[index])
+            if casted is not None:
+                stack.push(casted)
         index += 1
     print(stack)
     return stack
