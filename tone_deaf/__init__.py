@@ -1,7 +1,7 @@
 import os
 import argparse
 from .stack import *
-from .functionsdict import *
+from .chords import all_chords
 
 def trycast(token):
     try:
@@ -20,8 +20,8 @@ def process(tokens, past_stack=None):
         stack = Stack()
     index = 0
     while 0 <= index < len(tokens):
-        if tokens[index] in chord_functions.keys():
-            chord_functions[tokens[index]](stack)
+        if tokens[index] in all_chords.keys():
+            all_chords[tokens[index]](stack)
         else:
             casted = trycast(tokens[index])
             if casted is not None:
