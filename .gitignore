@@ -91,3 +91,4 @@ ENV/
 # Testing purposes
 testing.txt
 lyrics.txt
+.vscode/*
