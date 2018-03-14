@@ -1,4 +1,4 @@
-# D Chords are for string / list manipulation
+# D Chords are for string / list / set manipulation
 
 from random import shuffle
 
@@ -58,6 +58,10 @@ def keep_every_fifth(stack):
     else:
         stack.push(s[::5])
 
+def cast_to_set(stack):
+    s = stack.pop()
+    stack.push(set(s))
+
 def palindromize(stack):
     s = stack.pop()
     stack.push(s + s[::-1][1:])
@@ -74,6 +78,7 @@ chords = {
     'D#m'  : keep_every_other,
     'D#m7' : keep_every_third,
     'D#M7' : keep_every_fifth,
+    'D^9'  : cast_to_set,
     'Dm7'  : palindromize,
     'Dm9'  : is_palindrome
 }
