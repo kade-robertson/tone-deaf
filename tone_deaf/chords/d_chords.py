@@ -58,6 +58,14 @@ def keep_every_fifth(stack):
     else:
         stack.push(s[::5])
 
+def palindromize(stack):
+    s = stack.pop()
+    stack.push(s + s[::-1][1:])
+
+def is_palindrome(stack):
+    s = stack.pop()
+    stack.push(s == s[::-1])
+
 chords = {
     'D'    : reverse_str,
     'D#'   : shuffle_str,
@@ -65,7 +73,9 @@ chords = {
     'D#7'  : slice_str_adv,
     'D#m'  : keep_every_other,
     'D#m7' : keep_every_third,
-    'D#M7' : keep_every_fifth
+    'D#M7' : keep_every_fifth,
+    'Dm7'  : palindromize,
+    'Dm9'  : is_palindrome
 }
 
 __all__ = [ "chords" ]

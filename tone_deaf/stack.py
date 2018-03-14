@@ -13,6 +13,8 @@ class Stack():
                 return "'"+item
             else:
                 return '"'+item+'"'
+        elif type(item) is bool:
+            return ['false', 'true'][item]
         elif type(item) is list:
             return '['+' '.join(list(map(self.__str_rep, item))) + ']'
     def __str__(self):
