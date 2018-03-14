@@ -5,6 +5,7 @@ from random import shuffle
 def reverse_str(stack):
     s = stack.pop()
     stack.push(s[::-1])
+
 def shuffle_str(stack):
     s = stack.pop()
     if isinstance(s, str):
@@ -14,6 +15,7 @@ def shuffle_str(stack):
     else:
         shuffle(s)
     stack.push(s)
+
 def slice_str(stack):
     end = stack.pop()
     start = stack.pop()
@@ -21,6 +23,7 @@ def slice_str(stack):
     end = len(s) if end == 0 else end
     start = 0 if start == 0 else start
     stack.push(s[start:end])
+
 def slice_str_adv(stack):
     skip = stack.pop()
     end = stack.pop()
@@ -30,6 +33,7 @@ def slice_str_adv(stack):
     end = len(s) if end == 0 else end
     start = 0 if start == 0 else start
     stack.push(s[start:end:skip])
+    
 def remove_every_other(stack):
     s = stack.pop(stack)
     stack.push(s[::2])
