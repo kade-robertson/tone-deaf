@@ -33,17 +33,39 @@ def slice_str_adv(stack):
     end = len(s) if end == 0 else end
     start = 0 if start == 0 else start
     stack.push(s[start:end:skip])
-    
-def remove_every_other(stack):
-    s = stack.pop(stack)
-    stack.push(s[::2])
+
+def keep_every_other(stack):
+    s = stack.pop()
+    if isinstance(s, int):
+        v = stack.pop()
+        stack.push(v[s::2])
+    else:
+        stack.push(s[::2])
+
+def keep_every_third(stack):
+    s = stack.pop()
+    if isinstance(s, int):
+        v = stack.pop()
+        stack.push(v[s::3])
+    else:
+        stack.push(s[::3])
+
+def keep_every_fifth(stack):
+    s = stack.pop()
+    if isinstance(s, int):
+        v = stack.pop()
+        stack.push(v[s::5])
+    else:
+        stack.push(s[::5])
 
 chords = {
     'D'    : reverse_str,
     'D#'   : shuffle_str,
     'D#4'  : slice_str,
     'D#7'  : slice_str_adv,
-    'D#m'  : remove_every_other
+    'D#m'  : keep_every_other,
+    'D#m7' : keep_every_third,
+    'D#M7' : keep_every_fifth
 }
 
 __all__ = [ "chords" ]
