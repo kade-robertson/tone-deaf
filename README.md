@@ -2,7 +2,7 @@
 
 
 [![GitHub stars](https://img.shields.io/github/stars/kade-robertson/tone-deaf.svg?style=for-the-badge)](https://github.com/kade-robertson/tone-deaf/stargazers)
-[![PyPI](https://img.shields.io/pypi/v/tone-deaf.svg?style=for-the-badge)](https://github.com/kade-robertson/tone-deaf)
+[![PyPI](https://img.shields.io/pypi/v/tone-deaf.svg?style=for-the-badge)](https://pypi.python.org/pypi/tone-deaf)
 
 
 tone-deaf is an esoteric programming language which manipulates a stack based on chords. This repository contains a reference interpreter for the language as well as the wiki describing each function.
