@@ -15,8 +15,10 @@ class Stack():
                 return '"'+item+'"'
         elif type(item) is bool:
             return ['false', 'true'][item]
-        elif type(item) is list:
-            return '['+' '.join(list(map(self.__str_rep, item))) + ']'
+        elif type(item) in (list, tuple):
+            return '[' + ' '.join(list(map(self.__str_rep, item))) + ']'
+        elif type(item) is set:
+            return '{' + ' '.join(list(map(self.__str_rep, item))) + '}'
     def __str__(self):
         return '['+' '.join(list(map(self.__str_rep, self.__stk))) + ']'
     def pop(self, index=-1):
