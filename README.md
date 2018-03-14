@@ -48,3 +48,7 @@ td> quit
 ```
 
 The stack will be printed out after each line entered.
+
+# Functionality
+
+Please check out [the wiki](https://github.com/kade-robertson/tone-deaf/wiki) to get an understanding of all capabilities.
