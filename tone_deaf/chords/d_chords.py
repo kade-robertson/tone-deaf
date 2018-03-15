@@ -71,16 +71,38 @@ def is_palindrome(stack):
     stack.push(s == s[::-1])
 
 chords = {
-    'D'    : reverse_str,
-    'D#'   : shuffle_str,
-    'D#4'  : slice_str,
-    'D#7'  : slice_str_adv,
-    'D#m'  : keep_every_other,
-    'D#m7' : keep_every_third,
-    'D#M7' : keep_every_fifth,
-    'D^9'  : cast_to_set,
-    'Dm7'  : palindromize,
-    'Dm9'  : is_palindrome
+    'D'     : reverse_str,
+    'D#'    : shuffle_str,
+    'D#4'   : slice_str,
+    'D#7'   : slice_str_adv,
+    'D#m'   : keep_every_other,
+    'D#m7'  : keep_every_third,
+    'D#M7'  : keep_every_fifth,
+    'D^9'   : cast_to_set,
+    'D/A'   : lambda: None,
+    'D/B'   : lambda: None,
+    'D/C'   : lambda: None,
+    'D/C#'  : lambda: None,
+    'D/E'   : lambda: None,
+    'D/G'   : lambda: None,
+    'D11'   : lambda: None,
+    'D4'    : lambda: None,
+    'D5/E'  : lambda: None,
+    'D6'    : lambda: None,
+    'D7'    : lambda: None,
+    'D7#9'  : lambda: None,
+    'D7s2'  : lambda: None,
+    'D9^6'  : lambda: None,
+    'Dm'    : lambda: None,
+    'Dm#7'  : lambda: None,
+    'Dm/A'  : lambda: None,
+    'Dm/B'  : lambda: None,
+    'Dm/C'  : lambda: None,
+    'Dm/C#' : lambda: None,
+    'Dm7'   : palindromize,
+    'Dm9'   : is_palindrome,
+    'DM7'   : lambda: None,
+    'Ds2'   : lambda: None
 }
 
 __all__ = [ "chords" ]
