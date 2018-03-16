@@ -1,5 +1,6 @@
 # D Chords are for string / list / set manipulation
 
+import itertools
 from random import shuffle
 
 def reverse_str(stack):
@@ -70,6 +71,42 @@ def is_palindrome(stack):
     s = stack.pop()
     stack.push(s == s[::-1])
 
+def interleave_two(stack):
+    b = stack.pop()
+    a = stack.pop()
+    n = None
+    if isinstance(a, str) and isinstance(b, str):
+        n = ''.join(''.join(x) for x in (list(itertools.zip_longest(a, b, fillvalue = ''))))
+    else:
+        n = list(itertools.zip_longest(a, b))
+    stack.push(n)
+
+def interleave_three(stack):
+    c = stack.pop()
+    b = stack.pop()
+    a = stack.pop()
+    n = None
+    if isinstance(a, str) and isinstance(b, str) and isinstance(c, str):
+        n = ''.join(''.join(x) for x in (list(itertools.zip_longest(a, b, c, fillvalue = ''))))
+    else:
+        n = list(itertools.zip_longest(a, b, c))
+    stack.push(n)
+
+def interleave_n(stack):
+    z = stack.pop()
+    l = list()
+    if z <= 1:
+        return
+    while z > 0:
+        l.insert(0, stack.pop())
+        z -= 1
+    n = None
+    if all(isinstance(x, str) for x in l):
+        n = ''.join(''.join(x) for x in (list(itertools.zip_longest(*l, fillvalue = ''))))
+    else:
+        n = list(itertools.zip_longest(*l))
+    stack.push(n)
+
 chords = {
     'D'     : reverse_str,
     'D#'    : shuffle_str,
@@ -79,9 +116,9 @@ chords = {
     'D#m7'  : keep_every_third,
     'D#M7'  : keep_every_fifth,
     'D^9'   : cast_to_set,
-    'D/A'   : lambda: None,
-    'D/B'   : lambda: None,
-    'D/C'   : lambda: None,
+    'D/A'   : interleave_two,
+    'D/B'   : interleave_three,
+    'D/C'   : interleave_n,
     'D/C#'  : lambda: None,
     'D/E'   : lambda: None,
     'D/G'   : lambda: None,
